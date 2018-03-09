@@ -1,0 +1,2 @@
+# Make ~/.utility folder executable
+export PATH="${PATH}:$HOME/.utility-scripts"
