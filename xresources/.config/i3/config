@@ -25,6 +25,7 @@ set $mod Mod4
 
 # Define colours. NOTE that these are being pulled from Xresources.
 set_from_resource $background background #5297d1
+set_from_resource $darkBackground darkBackground #000000
 set_from_resource $foreground foreground #fdfdfd
 
 # Define names for default workspaces for which we configure keybindings
@@ -53,11 +54,14 @@ font pango:Roboto Sans 9
 gaps inner 10
 gaps outer 10
 
+default_border normal 0 px
+default_floating_border normal 0 px
+
 
 #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
 client.focused          $background $background $foreground $background $background
-client.unfocused        $background $background $foreground $background $background
-client.focused_inactive $background $background $foreground $background $background
+client.unfocused        $darkBackground $darkBackground $foreground $darkBackground $darkBackground
+client.unfocused        $darkBackground $darkBackground $foreground $darkBackground $darkBackground
 client.urgent           $background $background $foreground $background $background
 
 client.background $background
