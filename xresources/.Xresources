@@ -1,1 +1,67 @@
 #include ".xrdb/rofi/nord"
+#include ".xrdb/colour/nord"
+
+! ------------------------------------------------------------------------------
+! Xft Font Configuration
+! ------------------------------------------------------------------------------
+
+Xft.autohint:  0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting:   1
+Xft.antialias: 1
+Xft.rgba:      rgb
+
+
+! ----------------------------------------------------------------------
+! URxvt
+! ----------------------------------------------------------------------
+
+! Typography
+! ======================================================================
+URxvt*font:             xft:FiraCode:medium:size=14
+URxvt*boldFont:         xft:FiraCode:bold:size=14
+URxvt*letterSpace: 	    0
+URxvt.lineSpace: 		2
+
+! Scrollbars
+! ======================================================================
+! Remove them.
+URxvt*scrollBar:        False
+URxvt*scrollBar_right:  False
+
+! Whitespace.
+! ======================================================================
+!  External borders not needed, handle with i3
+URxvt*internalBorder:   24
+URxvt*externalBorder:   0
+
+! Fading
+! ======================================================================
+! When a window is unfocussed, fade it by {n}% - by default the setting
+! uses a black mask, but that is configurable as well:
+URxvt*fading:           50
+
+! History
+! ======================================================================
+! For [e.g.] realtime logging, there are often reams of data, so
+! this value is whacked right up. Just take the perf hit.
+URxvt*saveline:         10000
+
+! Behaviour
+! ======================================================================
+! Copy/paste functionality + clickable urls etc.
+URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select
+URxvt.copyCommand:      xclip -i -selection clipboard
+URxvt.pasteCommand:     xclip -o -selection clipboard
+URxvt.keysym.M-c:       perl:clipboard:copy
+URxvt.keysym.M-v:       perl:clipboard:paste
+URxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.Shift-Up:	command:\033]720;1\007
+URxvt.keysym.Shift-Down:command:\033]721;1\007
+URxvt.keysym.M-s:       perl:keyboard-select:search
+URxvt.keysym.M-u:       perl:url-select:select_next
+URxvt.urlLauncher:      firefox
+URxvt.underlineURLs:    true
+URxvt.urlButton: 1
