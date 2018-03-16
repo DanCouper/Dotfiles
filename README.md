@@ -16,9 +16,18 @@ I've grouped all functionality related to my Linux environment here. So there sh
 
 ### Installs [possibly] needed:
 
+The key install:
+
 ```
 sudo pacman -S i3-gaps # tiling window manager (fork, allows gaps)
 ```
+
+Want a better theme as well, so install the Arc theme via pacman, and
+then update the .config/gtk-3.0/settings.ini to use Arc-Dark, and update
+the font to Roboto while you're at it.
+
+Install geany and load the Nord theme (using Emacs most of the time, but
+a fast lightweight editor is nice as well).
 
 Possibly these, though there is the thing that you can't pad the bar, wtf just let me add some whitespace:
 ```

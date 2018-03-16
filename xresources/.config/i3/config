@@ -29,7 +29,7 @@ set_from_resource $darkBackground darkBackground #000000
 set_from_resource $foreground foreground #fdfdfd
 
 # Define names for default workspaces for which we configure keybindings
-# later on. We use variables to avoid repeating names in multiple places.
+# later on.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -50,7 +50,7 @@ set $ws10 "10"
 font pango:Roboto Sans 9
 
 # This fork of i3 allows gaps to be set. I like gaps, everything flush
-# gives me a headache, so gaps it is 
+# gives me a headache, so gaps it is
 gaps inner 10
 gaps outer 10
 
@@ -60,7 +60,7 @@ default_floating_border normal 0 px
 
 #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
 client.focused          $background $background $foreground $background $background
-client.unfocused        $darkBackground $darkBackground $foreground $darkBackground $darkBackground
+client.focused_inactive $background $background $foreground $background $background
 client.unfocused        $darkBackground $darkBackground $foreground $darkBackground $darkBackground
 client.urgent           $background $background $foreground $background $background
 
@@ -69,10 +69,15 @@ client.background $background
 # Everything is a bit cramped, allergic to whitespace much?
 
 # Use i3blocks for the status/etc that gets piped into i3bar. It's
-# a little more easily [and sanely, imo] configurable than i3status 
+# a little more easily [and sanely, imo] configurable than i3status
 bar {
   status_command i3blocks
   height 30
+  colors {
+    background $backgroundDark
+    statusline $foreground
+    separator $foreground
+  }
 }
 
 # ----------------------------------------------------------------------
