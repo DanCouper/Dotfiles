@@ -54,8 +54,9 @@ font pango:Roboto Sans 9
 gaps inner 10
 gaps outer 10
 
-default_border normal 0 px
-default_floating_border normal 0 px
+# default_border normal 0
+default_border none
+default_floating_border none
 
 
 #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
@@ -68,17 +69,21 @@ client.background $background
 
 # Everything is a bit cramped, allergic to whitespace much?
 
+# Use Polybar because, well, i3 bar is a bit shit.
+# Therefor, no bar.
+
+
 # Use i3blocks for the status/etc that gets piped into i3bar. It's
 # a little more easily [and sanely, imo] configurable than i3status
-bar {
-  status_command i3blocks
-  height 30
-  colors {
-    background $backgroundDark
-    statusline $foreground
-    separator $foreground
-  }
-}
+# bar {
+#   colors {
+#     background $background
+#     separator $foreground
+#     statusline $foreground
+#   }
+#   height 30
+#   status_command i3blocks
+# }
 
 # ----------------------------------------------------------------------
 # 03 - Basic Keybindings
@@ -213,7 +218,9 @@ bindsym $mod+r mode "resize"
 # 04 - Additional Bindings & Executors
 # ----------------------------------------------------------------------
 
-exec --no-startup-id xsetroot -solid $background
+exec --no-startup-id compton -b
+
+exec --no-startup-id polybar i3bar-replacement -r
 
 # start rofi instead of dmenu
 bindsym $mod+Shift+d exec --no-startup-id ".utility-scripts/rofi-launcher"
