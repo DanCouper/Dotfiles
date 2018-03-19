@@ -58,7 +58,7 @@ URxvt*saveline:         10000
 ! ======================================================================
 ! Copy/paste functionality
 ! Scripts are installed with the rest of the utility scripts:
-URxvt.perl-lib:         ~/.utility-scripts/
+! URxvt.perl-lib:         ~/.utility-scripts/
 URxvt.perl-ext-common:  default,clipboard,keyboard-select
 URxvt.copyCommand:      xclip -i -selection clipboard
 URxvt.pasteCommand:     xclip -o -selection clipboard

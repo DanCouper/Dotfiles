@@ -8,11 +8,11 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:background:#222}
-background-alt = ${xrdb:darkBackground:#444}
-foreground = ${xrdb:foreground:#222}
-foreground-icon = ${xrdb:foreground:#222}
-foreground-alt = ${xrdb:foreground:#555}
+background = ${xrdb:foreground:#222}
+background-alt = ${xrdb:foreground:#444}
+foreground = ${xrdb:background:#222}
+foreground-icon = ${xrdb:background:#222}
+foreground-alt = ${xrdb:background:#555}
 primary = ${xrdb:color1:#ffb52a}
 secondary = #e60053
 alert = ${xrdb:color1:#bd2c40}
@@ -41,13 +41,14 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Roboto:pixelsize=10;1
+font-0 = Roboto:style=Medium:pixelsize=10;1
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-2 = "MaterialIcons:style=Regular:pixelsize=10;1"
+font-2 = "Material Icons:style=Regular:pixelsize=10;1"
 
 modules-left = i3
 modules-center = title
-modules-right = volume wlan battery cpu temperature memory date menu0
+;modules-right = volume wlan battery cpu temperature memory date menu0
+modules-right = volume battery date menu0
 
 tray-position = right
 tray-padding = 2
@@ -128,7 +129,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.primary}
 label-focused-underline =
 label-focused-padding = 3
 
@@ -217,16 +218,10 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date =
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
+date = "%a %e %b"
+time = %H:%M:%S
 
 label = %date% %time%
 
