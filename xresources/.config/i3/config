@@ -220,6 +220,8 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id compton -b
 
+exec --no-startup-id feh --bg-fill ~/.config/i3/trinity-landscape-white.jpg
+
 exec --no-startup-id polybar i3bar-replacement -r
 
 # start rofi instead of dmenu
